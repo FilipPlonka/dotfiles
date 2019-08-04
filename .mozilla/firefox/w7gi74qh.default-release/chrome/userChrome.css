@@ -1,0 +1,124 @@
+@namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
+
+:root {
+  --bg-color: #282C34;
+  --darker-bg-color: #242830;
+  --fg-color: #CFD5E6;
+  --inactive-fg-color: #5C6370;
+  --highlight_1: #DD672C;
+
+  background-color: var(--bg-color);
+  color: var(--fg-color);
+
+/*    
+/*Change the background color of just the toolbar*/
+    --toolbar-bgcolor: var(--bg-color) !important;
+
+    /*change the default blue accent color in many different elements.*/
+    --lwt-accent-color: var(--highlight_1) !important;
+
+    /*Color the tabstrip background*/
+    --chrome-background-color: var(--bg-color) !important;
+
+    /*Color the background of the selected tab*/
+    --tab-selection-background-color: var(--bg-color) !important;
+
+    /*Color the background of a hovered tab. not sure if this still works.*/
+    --tab-hover-background-color: var(--bg-color) !important;
+
+    Background color of the toolbar and urlbar wrapper
+    --chrome-secondary-background-color: var(--darker-bg-color) !important;
+
+    --url-and-searchbar-background-color: var(--bg-color) !important;
+
+    /*color of highlighted text in the urlbar, searchbar, and other UI elements*/
+    --chrome-selection-background-color: var(--darker-bg-color) !important;
+
+    /*color of the urlbar border*/
+    --chrome-nav-bar-controls-border-color: var(--bg-color) !important;
+ /*urlbar border*/
+    /*color of the "tab-burst" effect you see when a tab finishes loading*/
+    --tab-loading-fill: var(--bg-color) !important;
+*/}
+
+/*Hides blue line above tab*/
+.tab-line[selected=true] {
+opacity:0!important;
+}
+
+
+/*Sets colors for none selected tabs*/
+.browser-toolbar {
+background-color:var(--bg-color)!important;
+color:var(--inactive-fg-color)!important;
+}
+ 
+/*Sets colors for selected tab */
+.tab-background[selected=true] {
+background-color:var(--bg-color)!important;
+color:var(--fg-color)!important;
+background-image:none!important;
+}
+
+/*Sets colors for hovered tab*/
+#tabbrowser-tabs .tabbrowser-tab:hover .tab-content {
+color: var(--fg-color)!important;
+background-color: var(--bg-color)!important;
+}
+
+
+/*hides some shit probably*/
+.tabbrowser-tab::before,.tabbrowser-tab::after {
+display:none!important;
+}
+
+/*makes close button show only on hover*/
+.tabbrowser-tab:not([pinned]):not(:hover) .tab-close-button {
+visibility:collapse!important;
+}
+
+/*hides 1px line above URL bar, sets nav bar button colors*/
+#nav-bar {
+box-shadow:none!important;
+border-top:none!important;
+color: var(--fg-color)!important;
+}
+
+/*Sets URL bar color*/
+#urlbar {
+background-color: var(--darker-bg-color)!important;
+border-color: var(--fg-color)!important;
+}
+#urlbar[focused=true] {
+    border-color: var(--highlight_1) !important;
+    border-width: 1px !important;
+}
+
+/*Autohide toolbar*/
+#PersonalToolbar{
+margin-top: -30px !important;
+transition: margin 0.1s linear !important;
+position: fixed !important;
+width: 100%;
+}
+
+#navigator-toolbox:hover #PersonalToolbar{
+margin-top: 0px !important;
+}
+#nav-bar{
+z-index: 1;
+}
+
+/*Sets bookmark toolbar text color*/
+#PersonalToolbar {
+  color: var(--fg-color) !important;
+}
+
+.tabs-newtab-button{
+  fill:var(--inactive-fg-color) !important;
+}
+
+.tabs-newtab-button:hover{
+  fill: var(--fg-color) !important;
+  background-color: var(--bg-color)!important;
+}
