@@ -1,0 +1,36 @@
+ * {
+    background-color:      #282C34;
+    text-color:           #EBEBFF;
+    font:            "Roboto Mono 12";
+}
+
+#window {
+    padding:    4 5 4;
+    anchor:     south;
+    location:   south;
+    width:      100%;
+    children:   [ horibox ];
+}
+
+#horibox {
+    orientation: horizontal;
+    children:   [ prompt, entry, listview ];
+}
+
+#listview {
+    layout:     horizontal;
+    spacing:    11px;
+    lines:      100;
+}
+
+#entry {
+    expand:     false;
+    width:      8em;
+}
+
+#element {
+    color: #5C6370;
+}
+#element selected {
+    color: #EBEBFF;
+}
