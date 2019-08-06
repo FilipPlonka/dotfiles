@@ -1,0 +1,9 @@
+remove mod4 = Mode_switch
+remove mod5 = Mode_switch
+keycode 133 = Mode_switch
+add mod3 = Mode_switch
+
+keycode 43 = h H Left
+keycode 44 = j J Down
+keycode 45 = k K Up
+keycode 46 = l L Right Lstroke lstroke Lstroke
